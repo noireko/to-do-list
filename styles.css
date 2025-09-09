@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    background-color:azure
+}
+
+main {
+    background-color: blanchedalmond;
+    height: 700px;
+    width: 500px;
+    margin: 70px;
+    border-radius: 10px;
+    border: 1px solid black
+}
+
+.seccion-botones-principal {
+    background-color: antiquewhite;
+    display:flex;
+    flex-direction: column;
+    align-items: center; /* centra horizontalmente */
+    
+}
+
+button {
+    padding: 20px 30px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 10px
+}
+
+.seccion-titulo {
+    padding: 40px;
+    text-align: center;
+}
