@@ -71,3 +71,38 @@ main {
     width: auto;
     height: 30px;
 }
+
+/* Formulario de tarea */
+
+.seccion-formulario {
+    padding-left: 30px
+}
+
+.seccion-formulario form {
+    display:flex;
+    flex-direction: column;
+}
+
+.seccion-formulario form label {
+    margin: 0 20px 30px;
+}
+
+.label-titulo input {
+    height: 30px;
+    width: 335px;
+    padding-left: 10px;
+}
+
+.label-desc textarea{
+    width: 400px;
+    height: 200px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.seccion-formulario form input {
+    margin-left: 10px
+}
+    width: auto;
+    height: 30px;
+}
