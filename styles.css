@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* BODY PRINCIPAL */
+
 body {
     display:flex;
     justify-content: center;
@@ -19,6 +21,8 @@ main {
     border: 1px solid black
 }
 
+/* Menu de lista */
+
 .seccion-botones-principal {
     background-color: antiquewhite;
     display:flex;
@@ -27,14 +31,43 @@ main {
     
 }
 
-button {
+.boton-agregar, .boton-ver-tareas {
     padding: 20px 30px;
     margin: 10px;
     font-size: 20px;
-    border-radius: 10px
 }
+
 
 .seccion-titulo {
     padding: 40px;
     text-align: center;
+}
+
+/* Lista de tareas */
+
+.seccion-tareas {
+    background-color:bisque;
+    height: 500px;
+    width: 100%;
+}
+
+.flecha-siguiente {
+    width: auto;
+    height: 30px;
+}
+
+.boton-atras {
+    padding: 10px 15px;
+}
+
+.seccion-botones-lista {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flecha-atras {
+    visibility: hidden;
+    width: auto;
+    height: 30px;
 }
