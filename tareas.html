@@ -8,14 +8,16 @@
 </head>
 <body>
     <main class="seccion-libreta">
-        <section class="seccion-titulo">
-            <h1 class="titulo">Tareas</h1>
+        <section class="seccion-titulo-tereas">
+            <h1 class="titulo-tareas">Tareas</h1>
         </section>
-        <section class="seccion-tareas"></section>
-        <section>
-            <button class="boton-atras">Atrás</button>
-            <img class="flecha-siguiente" src="flecha.png">
+        <section class="seccion-tareas" id="sectTareas"></section>
+        <section class="seccion-botones-lista">
+            <img class="flecha-atras" src="flecha1.png" onclick="paginaAnterior()" style="cursor:pointer;">
+            <button class="boton-atras" onclick="location.href='lista.html'">Menú</button>
+            <img class="flecha-siguiente" src="flecha.png" onclick="paginaSiguiente()" style="cursor:pointer;">
         </section>
     </main>
+    <script src="js.js"></script>
 </body>
 </html>
