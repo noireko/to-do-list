@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregue su tarea</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
     <main class="seccion-libreta">
         <section class="seccion-titulo">
-            <h1 class="titulo">Agregar tarea</h1>
+            <span onclick="location.href='index.html'" class="span"><img class="icono-menu" src="img/menu.png"></span>
+            <h1 class="titulo">Agregar</h1>
+            <span onclick="location.href='form.html'" class="cont-img span"><img class="icono-sumar" src="img/agregar.png"></span>
         </section>
         <section class="seccion-formulario">
             <form>
@@ -20,9 +22,9 @@
         </section>
         <div class="seccion-botones-principal">
             <button id="btnAgregar" class="boton-agregar" type="button">Agregar a lista</button>
-            <button class="boton-ver-tareas" onclick="location.href='lista.html'">Menú</button>
+            <button class="boton-ver-tareas" onclick="location.href='lista-tareas.html'">Menú</button>
         </div>
     </main>
-    <script src="js.js"></script>
+    <script src="js/js.js"></script>
 </body>
 </html>
