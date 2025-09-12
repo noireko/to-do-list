@@ -3,13 +3,20 @@ const sectTareas = document.getElementById("sectTareas");
 const tituInput = document.getElementById("tituloInput")
 const fechaInput = document.getElementById("fechaInput")
 const descInput = document.getElementById("descInput")
+const pagAct = document.getElementById("paginaActual");
+const btnDel = document.getElementById("btnElim")
 
 let listaTareas = JSON.parse(localStorage.getItem("listaTareas")) || [];
 
-const maxPorHoja = 3;
+const maxPorHoja = 4;
 let currentPage = 0; 
 
 function agregarTarea() {
+
+  if (tituInput.value === "") {
+    alert("Debe ingresar un título");
+    return
+  }
 
   const tarea = {
     titulo: tituInput.value,
@@ -34,15 +41,26 @@ const mostrarTarea = () => {
   const tareasPagina = listaTareas.slice(start, end);
   tareasPagina.forEach((tarea, index) => {
     sectTareas.innerHTML += `
-      <div class="tarea-item">
+      <div class="tarea-item" id="item-tarea">
         <h2 class="titulo-tarea">${tarea.titulo}</h2>
         <p class="fecha-tarea">${tarea.fecha}</p>
         <p class="des-tarea">${tarea.descripcion}</p>
-        <button class="boton-elimtarea" onclick="eliminarTarea(${start + index})">Eliminar</button>
+        <button class="boton-elimtarea activo" id="btnElim" onclick="eliminarTarea(${start + index})">Eliminar</button>
       </div>
     `;
   });
+  if (pagAct) {
+  pagAct.innerText = currentPage + 1;
 }
+}
+
+const mostrarBtnDel = () => {
+  const botones = document.querySelectorAll(".boton-elimtarea");
+  botones.forEach(boton => {
+    boton.classList.toggle("activo");
+  });
+}
+
 
 if (sectTareas) {
   mostrarTarea();
