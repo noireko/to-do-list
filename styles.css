@@ -2,262 +2,182 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Lato, Helvetica Neue, helvetica, sans-serif;
 }
 
-/* HEADER */
-
-header {
-    background-color: #272727;
-    height: 100%;
-    display: flex;
-    height: 3.75rem;
-    justify-content: space-between;
-    align-items: center;
+body {
+    background-color: azure;
+    font-family: Arial, sans-serif;
+    width: 500px;
+    margin: 0 auto;
 }
 
-.menu-hamb {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 21px;
-    height: 14px;
-}
+/* ================== */
+/* VERSIÓN DESKTOP    */
+/* ================== */
 
-.menu-hamb span {
-    background-color: #ffffff;
-    width: 17px;
-    height: 2px;
-}
 
-.vis-cel {
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    height: 60px;
-    width: 60px;
-}
-
-.vis-cel.active {
-    background-color: #151515;
-}
-
-.div-logos {
-    height: 3.75rem;
+body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    background-color: blanchedalmond;
+    max-width: 100%;
 }
 
-.logo-cel {
-    margin-left: 10px;
-    height: 35px;
-    width: auto;
+main {
+    background-color: blanchedalmond;
+    width: 95%;
+    height: 95vh;
+    margin: 0;
+    border-radius: .625rem;
+    overflow: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
 }
 
-.logo-desk {
-    display: none;
-}
-
-.seccion-logo {
+/* Menu de lista */
+.seccion-botones-principal {
     display: flex;
-
-}
-
-.nav {
-    display: none;
-}
-
-.nav.active {
-    display: flex;
-    list-style: none;
-    padding: 10px 0 0 5px;
     flex-direction: column;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - 60px);
-    background: #151515;
-    z-index: 999;
-    color: #ffffff;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
 }
 
-nav a {
-    font-size: 16px;
-    margin: 15px;
+.boton-agregar,
+.boton-ver-tareas {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    width: 90%;
 }
 
-svg {
-    width: 1.5rem;
+.seccion-titulo {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Lista de tareas */
+.seccion-tareas {
+    padding: 10px;
+    height: 85%;
+    width: 100%;
+    padding: 0.5rem;
+    overflow-y: auto;
+}
+
+.flecha-siguiente,
+.flecha-atras {
     height: 1.5rem;
-    fill: rgb(187, 187, 187);
 }
 
-.icono-lupa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 13px
+.boton-atras {
+    padding: .5rem .75rem;
 }
 
-.seccion-perfil {
+.seccion-botones-lista {
     display: flex;
-    justify-content: center;
-}
-
-.seccion-foto {
-    height: 36px;
-    width: auto;
-    display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
-.seccion-foto img {
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
+.paginaActual {
+    padding-top: 15px;
+    text-align: center;
 }
 
-.seccion-foto-perfil {
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 13px
-}
-
-.icono-flecha {
-    margin-left: 6px
-}
-
-.seccion-anime {
-    position: relative;
-    display: inline-block;
-    height: 100%;
-}
-
-.seccion-anime-todo {
+.icono-sumar, .icono-menu {
+    width: 30px;
+    height: 30px;
     
-    height: 55vh;
 }
 
-
-.seccion-foto-grande {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.seccion-foto-grande img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 93% 10%;
-    transition: object-position 0.3s ease;
-}
-
-
-
-.seccion-cuerpo {
-    background-color: #000000;
-    height: 1200px;
-}
-
-.descripcion {
-    display: none
-}
-
-.seccion-todo {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+.span {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: end;
-    color: white;
-}
-
-.seccion-info {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-}
-
-.seccion-logo-anime img {
-    height: 60px;
-}
-
-.seccion-grade {
-    margin-block: .75rem 1.25rem;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 35px;
+    background-color: white;
 }
 
-.seccion-grade svg {
-    height: 1.25rem;
-    width: auto;
-}
-
-.seccion-grade span {
-    font-size: .875rem;
-    color: #8c8c8c;
-}
-
-.seccion-grade span::before {
-    background-color: #a0a0a0;
-    content: "";
-    display: inline-block;
-    height: .25rem;
-    inset-block-start: 50%;
-    line-height: 1;
-    margin-inline-end: .25rem;
-    margin-inline-start: .25rem;
-    transform: translateY(-90%) rotate(45deg);
-    width: .25rem;
-}
-
-.seccion-boton {
+.seccion-titulo-tereas {
+    
     display:flex;
-    justify-content: center;
-    gap: 10px
-}
-
-.seccion-boton a {
-    padding: 10px 65px;
-    background-color: #ff630c;
-    color: #000000;
-}
-
-.boton-bookmark{
-    padding: 5px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #ff630c;
-    background-color: transparent;
-}
-
-.boton-bookmark svg{
-    fill: #ff630c;
-}
-
-.barritas {
-    display: flex;
     flex-direction: row;
-    margin-top: 30px;
+    justify-content: space-around;
 }
 
-.barritas span {
-    background-color: #a0a0a0;
-    height: 5px;
-    width: 10px;
+.titulo-tareas {
+    
+    margin: 0 12px;
 }
 
+/* Formulario de tarea */
+.seccion-formulario {
+    padding: 1rem;
+}
+
+.seccion-formulario form label {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.seccion-formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-titulo input {
+    margin-top: 10px;
+    height: 2rem;
+    padding-left: .5rem;
+}
+
+.label-desc textarea {
+    margin-top: 10px;
+    height: 8rem;
+    padding: .5rem;
+}
+
+.seccion-formulario form input {
+    margin-left: 0;
+}
+
+.seccion-titulo {
+    
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.seccion-titulo .cont-img {
+    visibility: hidden;
+}
+
+/* Tareas */
+.seccion-titulo-tereas {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.titulo-tarea,
+.fecha-tarea,
+.des-tarea {
+    padding-bottom: 10px;
+}
+
+.tarea-item {
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(133, 133, 133);
+}
+
+.activo {
+    display:none;
+}
