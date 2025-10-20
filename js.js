@@ -9,13 +9,12 @@ const btnDel = document.getElementById("btnElim")
 let listaTareas = JSON.parse(localStorage.getItem("listaTareas")) || [];
 
 const maxPorHoja = 4;
-let currentPage = 0; 
+let currentPage = 0;
 
 function agregarTarea() {
-
   if (tituInput.value === "") {
     alert("Debe ingresar un título");
-    return
+    return;
   }
 
   const tarea = {
@@ -26,6 +25,15 @@ function agregarTarea() {
 
   listaTareas.push(tarea);
   localStorage.setItem("listaTareas", JSON.stringify(listaTareas));
+
+  if (fechaInput.value) {
+    const fechaAlarma = new Date(fechaInput.value);
+    cordova.plugins.notification.local.schedule({
+      title: "Alarma",
+      text: `¡Hora de revisar tu tarea: ${tarea.titulo}!`,
+      trigger: { at: fechaAlarma }
+    });
+  }
 
   tituInput.value = "";
   fechaInput.value = "";
@@ -45,13 +53,13 @@ const mostrarTarea = () => {
         <h2 class="titulo-tarea">${tarea.titulo}</h2>
         <p class="fecha-tarea">${tarea.fecha}</p>
         <p class="des-tarea">${tarea.descripcion}</p>
-        <button class="boton-elimtarea activo" id="btnElim" onclick="eliminarTarea(${start + index})">Eliminar</button>
+        <button class="boton-elimtarea activo" onclick="eliminarTarea(${start + index})">Eliminar</button>
       </div>
     `;
   });
   if (pagAct) {
-  pagAct.innerText = currentPage + 1;
-}
+    pagAct.innerText = currentPage + 1;
+  }
 }
 
 const mostrarBtnDel = () => {
